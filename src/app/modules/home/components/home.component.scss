@@ -1,0 +1,29 @@
+section div p{
+    color: #3f51b5;
+    font-size: 30px;
+    text-shadow: 2px 3px 5px grey;
+    margin: 30px 0;
+}
+ 
+section div + p{
+    color: #3f51b5;
+    font-weight: bold;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+.mat-expansion-panel{
+    box-shadow: none;
+    background-color: transparent;
+}
+
+mat-list{
+    width: fit-content;
+    margin-bottom: 24px;
+    margin: 0 auto;
+}
+
+// shopping-cart-page{
+//     height: 70vh;
+//     overflow: auto;
+// }

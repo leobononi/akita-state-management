@@ -1,0 +1,13 @@
+.form{
+    height: 70vh;
+    padding: 0 8px;
+    .mat-expansion-panel{
+        box-shadow: none;
+        background-color: transparent;
+    }
+}
+
+.table{
+    height: 70vh;
+    overflow: auto;
+}

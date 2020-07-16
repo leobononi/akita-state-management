@@ -1,0 +1,17 @@
+table {
+    $lightGrey: #8f8d8d;
+    border: 1px solid $lightGrey;
+    width: 100%;
+    
+    .highlight{
+      background: #42A948; /* green */
+    }
+
+    tr:hover {
+      background: $lightGrey;
+    }
+
+    mark{
+      padding: 4px;
+    }
+  }

@@ -1,0 +1,31 @@
+<div fxLayout="column" fxFlexAlign="stretch">
+  <table fxFlexAlign="center" mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> No. </th>
+      <td mat-cell *matCellDef="let element"> {{element.number}} </td>
+      <td mat-footer-cell *matFooterCellDef> <strong>TOTAL</strong> </td>
+    </ng-container>
+
+    <ng-container matColumnDef="description">
+      <th mat-header-cell *matHeaderCellDef> Dsc </th>
+      <td mat-cell *matCellDef="let element"> {{element.description}}</td>
+      <td mat-footer-cell *matFooterCellDef></td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let element"> {{element.price | currency}} </td>
+      <td mat-footer-cell *matFooterCellDef></td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Action </th>
+      <td mat-cell *matCellDef="let element"> <mat-icon style="cursor: pointer;" aria-hidden="false" (click)="delete(element.id)" aria-label="Delete">delete</mat-icon> </td>
+      <td mat-footer-cell *matFooterCellDef><mark><strong>{{totalPrice | currency}}</strong></mark></td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let element; columns: displayedColumns;" [ngClass]="{'highlight': element.id == activeRecord?.id}"(click)="rowClick(element)"></tr>
+    <tr mat-footer-row *matFooterRowDef="displayedColumns; sticky: true"></tr>
+  </table>
+</div>

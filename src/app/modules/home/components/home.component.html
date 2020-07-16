@@ -1,0 +1,46 @@
+<main fxLayout="column"  fxLayoutGap="24px">
+    <h1 fxLayoutAlign="space-around center">STATE MANAGEMENT</h1>
+    <div fxflex fxLayout="row wrap">
+        <ul fxFlex="50">
+            <li>
+                On reactive programming components interact each other as soon they change their states
+            </li>
+            <li>
+                A set of observable collections and variables help us to notify about these changes and proceed as needed
+            </li>
+            <li>
+                But it's difficult to keep them tracked once the application starts growing up
+            </li>
+        </ul>
+        <ul fxFlex="50">
+            <li>
+                Akita comes to help us to manage these interations. (think about a DATABASE for UI)
+            </li>
+            <li>
+                Built on top of RxJS (multiple data stores from Flux and the immutable updates from Redux)
+            </li>
+            <li>
+                Simple and effective
+            </li>
+            <li>
+                Pattern known as  'Observable Data Stores'
+            </li>
+            <li>
+                POO principles
+            </li>
+        </ul>
+    </div>
+    <div fxLayoutAlign="center" >
+        <img fxFlex="70" src="/assets/flow.png" alt="image">
+    </div>
+
+    <h2 fxLayoutAlign="space-around center">BASIC CONCEPTS</h2>
+    <mat-list>
+        <mat-list-item> Model (Entity principle) </mat-list-item>
+        <mat-list-item> Entity Store (single source of truth) </mat-list-item>
+        <mat-list-item> Entiy Query (layer between components and entity store) </mat-list-item>
+    </mat-list>
+
+    <h2 fxFlexAlign="center">Shopping Cart</h2>   
+    <shopping-cart-page></shopping-cart-page>
+</main>
