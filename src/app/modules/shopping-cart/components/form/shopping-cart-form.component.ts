@@ -15,6 +15,12 @@ export class ShoppingCartFormComponent implements OnInit{
   @Input()
   activeRecord: ShoppingCartModel;
 
+  @Input()
+  hasError: boolean;
+
+  @Input()
+  isEditing: boolean;
+
   @Output()
   onFormChange: EventEmitter<any> = new EventEmitter();
 

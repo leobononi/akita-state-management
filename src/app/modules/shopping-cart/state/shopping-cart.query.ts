@@ -6,6 +6,9 @@ import { Injectable } from '@angular/core';
     providedIn: 'root',
 })
 export class ShoppingCartQuery extends QueryEntity<ShoppingCartState> {
+    isEditing$ = this.select(state => state.ui.isEditing);
+    hasError$ = this.selectError();
+    isLoading$ = this.selectLoading();
     all$ = this.selectAll();
     total$ = this.selectCount();
     active$ = this.selectActive(); /*explain after*/

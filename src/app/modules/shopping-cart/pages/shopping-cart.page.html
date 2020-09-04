@@ -1,17 +1,28 @@
 <div fxLayout.lg="row" fxLayout="column" fxLayoutGap="30px">
     <div fxFlex="50" class="table">
-        <shopping-cart-component [dataSource]="query.all$ | async" [activeRecord]="query.active$ | async" 
-        (onDelete)="deleteItem($event)" (onRowClick)="setActiveRecord($event)" [totalPrice]="totalPrice">
+        <shopping-cart-component [dataSource]="query.all$ | async" 
+            [activeRecord]="query.active$ | async" 
+            [hasError]="query.hasError$ | async"
+            [totalPrice]="totalPrice" 
+            [isLoading]="query.isLoading$ | async"
+            (onDelete)="deleteItem($event)" 
+            (onRowClick)="setActiveRecord($event)">
         </shopping-cart-component>
     </div>
     <div fxFlex="50"  class="form">
         <div fxLayoutAlign="end end">
-            <button mat-fab [matBadge]="query.total$ | async" matBadgeColor="warn" (click)="addItem()"><mat-icon>add</mat-icon></button>
+            <button mat-fab [matBadge]="query.total$ | async"  matBadgeColor="warn" (click)="addItem()">
+                <mat-icon>add</mat-icon>
+            </button>
         </div>
         <mat-expansion-panel #panelForm hideToggle>
-            <shopping-cart-form-component [totalItems]="query.total$ | async" 
-            [activeRecord]="query.active$ | async" 
-            (onFormChange)="updateRecord($event)" (onFormCheck)="resetPanel()"></shopping-cart-form-component>
+            <shopping-cart-form-component 
+                [totalItems]="query.total$ | async" 
+                [activeRecord]="query.active$ | async" 
+                [hasError]="query.hasError$ | async"
+                [isEditing]="query.isEditing$ | async"
+                (onFormChange)="updateRecord($event)" 
+                (onFormCheck)="resetPanel()"></shopping-cart-form-component>
           </mat-expansion-panel>
     </div>
 </div>

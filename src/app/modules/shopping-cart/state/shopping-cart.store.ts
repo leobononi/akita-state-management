@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 
 export interface ShoppingCartState extends EntityState<ShoppingCartModel> { 
   ui: {
-    totalPrice: number;
+    isEditing: boolean
   };
 }
 
@@ -15,7 +15,7 @@ export interface ShoppingCartState extends EntityState<ShoppingCartModel> {
 export class ShoppingCartStore extends EntityStore<ShoppingCartState> {
   constructor() {
     super({
-      ui: { totalPrice: 0}
+      ui: { isEditing: false}
     });
   }
 }

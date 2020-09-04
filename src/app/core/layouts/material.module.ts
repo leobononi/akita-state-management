@@ -13,6 +13,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   imports: [
@@ -31,7 +32,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatIconModule,
     MatTableModule,
     MatInputModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     MatTableModule,
@@ -49,7 +51,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatIconModule,
     MatTableModule,
     MatInputModule,
-    MatBadgeModule
+    MatBadgeModule,
+    MatProgressSpinnerModule
   ],
   declarations: []
 })

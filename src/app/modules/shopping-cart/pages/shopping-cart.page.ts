@@ -46,6 +46,7 @@ export class ShoppingCartPage implements OnInit {
 
         this.formExpansionPanel.close();
       } else {
+        this.service.setAddMode();
         this.formExpansionPanel.open();
         let record = {
           id : Math.random() as ID,
@@ -69,6 +70,7 @@ export class ShoppingCartPage implements OnInit {
 
     setActiveRecord(id: ID){
       this.service.setActive(id);
+      this.service.setEditMode();
       this.formExpansionPanel.open();
       this.shoppingCartFormComponent.setFormValues(this.query.getActive() as ShoppingCartModel);
     }

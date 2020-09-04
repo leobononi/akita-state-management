@@ -18,6 +18,12 @@ export class ShoppingCartComponent {
     @Input()
     activeRecord: ShoppingCartModel;
 
+    @Input()
+    isLoading: boolean;
+
+    @Input()
+    hasError: boolean;
+
     @Output()
     onDelete: EventEmitter<ID> = new EventEmitter();
 

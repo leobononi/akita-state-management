@@ -13,7 +13,9 @@ export class ShoppingCartService {
     public store: ShoppingCartStore
   ) {  }
 
-  chargeStore() {  
+  async chargeStore() { 
+    this.store.setLoading(true);
+    await new Promise(resolve => setTimeout(resolve, 5000));
     const items: ShoppingCartModel[] = [
         {id: 1, description: "Item1 description here", number: 1, price: 110.34},
         {id: 2, description: "Item2 description here", number: 2, price: 664.90},
@@ -38,6 +40,8 @@ export class ShoppingCartService {
   }
 
   updateRecord(id: ID, record: ShoppingCartModel){
+    let isInvalid = record.description && record.description.length > 30
+    this.store.setError(isInvalid);
     this.store.update(id, record);
   }
 
@@ -47,5 +51,13 @@ export class ShoppingCartService {
 
   setActive(id: ID){
     this.store.setActive(id);
+  }
+
+  setEditMode(){
+    this.store.update({ui: {isEditing: true}});
+  }
+
+  setAddMode(){
+    this.store.update({ui: {isEditing: false}});
   }
 }
